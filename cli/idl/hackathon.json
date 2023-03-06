@@ -1,0 +1,501 @@
+{
+  "version": "0.1.0",
+  "name": "hackathon",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "dao",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "grantAdmin",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "dao",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "account",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "revokeAdmin",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "dao",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "account",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createProposal",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "dao",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "proposal",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenVote",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "time",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "startTime",
+          "type": "u64"
+        },
+        {
+          "name": "endTime",
+          "type": "u64"
+        },
+        {
+          "name": "voteType",
+          "type": "u8"
+        },
+        {
+          "name": "numOfOptions",
+          "type": "u8"
+        },
+        {
+          "name": "tokensPerOption",
+          "type": "u16"
+        },
+        {
+          "name": "threshold",
+          "type": "u16"
+        },
+        {
+          "name": "maxOptionsPerVote",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "vote",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "superAdmin",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "dao",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "proposal",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "voter",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenVote",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "authorityTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "proposalTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "time",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "options",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "claim",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "superAdmin",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "dao",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "proposal",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "voter",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenVote",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "authorityTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "proposalTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "time",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Dao",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "superAdmin",
+            "type": "publicKey"
+          },
+          {
+            "name": "admins",
+            "type": {
+              "vec": "publicKey"
+            }
+          },
+          {
+            "name": "numOfProposals",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Proposal",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "dao",
+            "type": "publicKey"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "tokenVote",
+            "type": "publicKey"
+          },
+          {
+            "name": "startTime",
+            "type": "u64"
+          },
+          {
+            "name": "endTime",
+            "type": "u64"
+          },
+          {
+            "name": "voteType",
+            "type": "u8"
+          },
+          {
+            "name": "numOfOptions",
+            "type": "u8"
+          },
+          {
+            "name": "numOfNftPerOption",
+            "type": {
+              "vec": "u16"
+            }
+          },
+          {
+            "name": "tokensPerOption",
+            "type": "u16"
+          },
+          {
+            "name": "threshold",
+            "type": "u16"
+          },
+          {
+            "name": "maxOptionsPerVote",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Voter",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "proposal",
+            "type": "publicKey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "numOfNftPerVoted",
+            "type": {
+              "vec": "u16"
+            }
+          },
+          {
+            "name": "isClaimed",
+            "type": "bool"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "VoteType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Single"
+          },
+          {
+            "name": "Polling"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "AccountIsAnAdmin",
+      "msg": "Hackathon: This account is already an admin"
+    },
+    {
+      "code": 6001,
+      "name": "AccountIsNotAnAdmin",
+      "msg": "Hackathon: This account is not an admin"
+    },
+    {
+      "code": 6002,
+      "name": "InvalidVoteType",
+      "msg": "Hackathon: Invalid vote type (single choice is 0, polling is 1)"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidTitleLength",
+      "msg": "Hackathon: The length of title of proposal cannot be longer 100 characters"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidDescriptionLength",
+      "msg": "Hackathon: The length of description of proposal cannot be longer 300 characters"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidTimestamp",
+      "msg": "Hackathon: Invalid timestamp"
+    },
+    {
+      "code": 6006,
+      "name": "InvalidNumOfOptions",
+      "msg": "Hackathon: The number of options cannot be zero"
+    },
+    {
+      "code": 6007,
+      "name": "InvalidNumOfTokensPerOption",
+      "msg": "Hackathon: The number of tokens per option cannot be zero"
+    },
+    {
+      "code": 6008,
+      "name": "InvalidThreshold",
+      "msg": "Hackathon: The threshold cannot be zero or greater than 1000"
+    },
+    {
+      "code": 6009,
+      "name": "InvalidMaxOptionsPerVote",
+      "msg": "Hackathon: The max of options per vote is invalid"
+    },
+    {
+      "code": 6010,
+      "name": "InvalidOption",
+      "msg": "Hackathon: The option index is invalid"
+    },
+    {
+      "code": 6011,
+      "name": "NumberOptionNotMatchProposalType",
+      "msg": "Hackathon: The number of options not match with the proposal type"
+    },
+    {
+      "code": 6012,
+      "name": "NowCannotVote",
+      "msg": "Hackathon: The current timestamp cannot vote"
+    },
+    {
+      "code": 6013,
+      "name": "IsAlreadyClaimed",
+      "msg": "Hackathon: The vote is already claimed"
+    },
+    {
+      "code": 6014,
+      "name": "NowCannotClaim",
+      "msg": "Hackathon: The current timestamp cannot claim"
+    },
+    {
+      "code": 6015,
+      "name": "NothingToClaim",
+      "msg": "Hackathon: Nothing to claim"
+    }
+  ],
+  "metadata": {
+    "address": "6HzSgqLgUCFKSs48EPMWtuE5GznKTqMJQPxNMnqHNC41"
+  }
+}
